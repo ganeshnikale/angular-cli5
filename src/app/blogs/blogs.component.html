@@ -1,0 +1,21 @@
+<h2>My blogs</h2>
+<ul class="blogs">
+  <li *ngFor="let blog of blogs"
+  [class.selected]="blog === selectedBlog"
+    (click)="onSelect(blog)">
+   
+    <span class="badge">{{blog.id}}</span> {{blog.title}}
+  </li>
+</ul>
+
+<div *ngIf="selectedBlog">
+ 
+  <h2>{{ selectedBlog.title | uppercase }} Details</h2>
+  <div><span>id: </span>{{selectedBlog.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedBlog.title" placeholder="name">
+    </label>
+  </div>
+ 
+</div>
