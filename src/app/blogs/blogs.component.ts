@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService} from '../services/blog.service';
+ import{ blog} from '../blog';
 
-import{ blog} from '../blog';
-
-import{BLOGS} from '../mock-blogs';
+// import{BLOGS} from '../mock-blogs';
 
 @Component({
   selector: 'app-blogs',
@@ -10,17 +10,19 @@ import{BLOGS} from '../mock-blogs';
   styleUrls: ['./blogs.component.css']
 })
 export class BlogsComponent implements OnInit {
-  blogs = BLOGS;
-
-  selectedBlog: blog;
+  public Blogs = [];
 
 
-  constructor() { }
+
+  constructor( private _BlogService : BlogService) { }
 
   ngOnInit() {
+    this.Blogs = this._BlogService.getBlogs();
   }
+ 
+  selectedBlog = this._BlogService.getBlogs();
 
-  onSelect(blog: blog): void {
-    this.selectedBlog = blog;
+  onSelect(Blogs: BlogService): void {
+    this.selectedBlog = Blogs;
   }
 }
