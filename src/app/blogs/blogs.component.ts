@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService} from '../services/blog.service';
- import{ blog} from '../blog';
+
 
 // import{BLOGS} from '../mock-blogs';
 

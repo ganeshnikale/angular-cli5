@@ -4,18 +4,18 @@
   [class.selected]="blog === selectedBlog"
     (click)="onSelect(blog)">
    
-    <span class="badge">{{blog.id}}</span> {{blog.title}}
+   <a routerLink = {{blog.id}}>  <span class="badge">{{blog.id}}</span> {{blog.title}}</a>
   </li>
 </ul>
 
-<div *ngIf="selectedBlog">
+<!-- <div *ngIf="selectedBlog">
  
-  <h2>{{ selectedBlog.title | uppercase }} Details</h2>
-  <div><span>id: </span>{{selectedBlog.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedBlog.title" placeholder="name">
-    </label>
-  </div>
- 
-</div>
+    <h2>{{ selectedBlog.title | uppercase }} Details</h2>
+    <div><span>id: </span>{{selectedBlog.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="selectedBlog.title" placeholder="name">
+      </label>
+    </div>
+   
+  </div> -->

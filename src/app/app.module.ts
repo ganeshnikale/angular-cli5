@@ -8,17 +8,22 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroService } from './services/hero.service';
 import { BlogService} from './services/blog.service';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule} from './app-routing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     BlogsComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule
   ],
   providers: [HeroService,BlogService],
   bootstrap: [AppComponent]
